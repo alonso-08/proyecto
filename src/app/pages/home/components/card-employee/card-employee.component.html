@@ -1,0 +1,62 @@
+<mat-list>
+  <div mat-subheader>Detail Employee</div>
+
+  <div class="row">
+    <div class="col-md-4">
+      <mat-list-item>
+        <mat-icon mat-list-icon>fingerprint</mat-icon>
+        <div mat-line>{{data.id_employee}}</div>
+        <div mat-line> id employee </div>
+      </mat-list-item>
+    </div>
+    <div class="col-md-4">
+      <mat-list-item>
+        <mat-icon mat-list-icon>badge</mat-icon>
+        <div mat-line>{{data.name}}</div>
+        <div mat-line> name </div>
+      </mat-list-item>
+    </div>
+    <div class="col-md-4">
+      <mat-list-item>
+        <mat-icon mat-list-icon>badge</mat-icon>
+        <div mat-line>{{data.last_name}}</div>
+        <div mat-line> last name </div>
+      </mat-list-item>
+    </div>
+    <div class="col-md-4">
+      <mat-list-item>
+        <mat-icon mat-list-icon>email</mat-icon>
+        <div mat-line>{{data.email}}</div>
+        <div mat-line> email </div>
+      </mat-list-item>
+    </div>
+    <div class="col-md-4">
+      <mat-list-item>
+        <mat-icon mat-list-icon>apartment</mat-icon>
+        <div mat-line>{{data.nationality}}</div>
+        <div mat-line> nationality </div>
+      </mat-list-item>
+    </div>
+    <div class="col-md-4">
+      <mat-list-item>
+        <mat-icon mat-list-icon>call</mat-icon>
+        <div mat-line>{{data.phone}}</div>
+        <div mat-line> phone </div>
+      </mat-list-item>
+    </div>
+    <div class="col-md-4">
+      <mat-list-item>
+        <mat-icon mat-list-icon>folder</mat-icon>
+        <div mat-line>{{data.civil_status}}</div>
+        <div mat-line> civil status </div>
+      </mat-list-item>
+    </div>
+    <div class="col-md-4">
+      <mat-list-item>
+        <mat-icon mat-list-icon>event</mat-icon>
+        <div mat-line>{{data.birthday | date:'mediumDate' }}</div>
+        <div mat-line> birthday </div>
+      </mat-list-item>
+    </div>
+  </div>
+</mat-list>

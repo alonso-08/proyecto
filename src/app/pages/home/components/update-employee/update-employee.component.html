@@ -1,0 +1,52 @@
+<h2>Update employee</h2>
+<form [formGroup]="formEmployee" class="row">
+    <div class="col-md-4">
+        <mat-form-field class="width-full" appearance="fill">
+            <mat-label>Name: </mat-label>
+            <input matInput formControlName="name">
+        </mat-form-field>
+    </div>
+    <div class="col-md-4">
+        <mat-form-field class="width-full" appearance="fill">
+            <mat-label>Lastname:</mat-label>
+            <input matInput formControlName="last_name">
+        </mat-form-field>
+    </div>
+    <div class="col-md-4">
+        <mat-form-field class="width-full" appearance="fill">
+            <mat-label>Email:</mat-label>
+            <input matInput type="email" formControlName="email">
+        </mat-form-field>
+    </div>
+    <div class="col-md-4">
+        <mat-form-field class="width-full" appearance="fill">
+            <mat-label>Nationality:</mat-label>
+            <input matInput formControlName="nationality">
+        </mat-form-field>
+    </div>
+    <div class="col-md-4">
+        <mat-form-field class="width-full" appearance="fill">
+            <mat-label>Phone:</mat-label>
+            <input matInput type="tel" formControlName="phone">
+        </mat-form-field>
+    </div>
+    <div class="col-md-4">
+        <mat-form-field class="width-full" appearance="fill">
+            <mat-label>Civil status</mat-label>
+            <select matNativeControl formControlName="civil_status">
+                <option *ngFor="let status of listCivilStatus">{{ status }}</option>
+            </select>
+        </mat-form-field>
+    </div>
+    <div class="col-md-4">
+        <mat-form-field class="width-full" appearance="fill">
+            <mat-label>Birthday:</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="birthday">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+    </div>
+    <div class="col-12" style="text-align: right;">
+        <button mat-raised-button color="primary"(click)="updateEmploye()" [disabled]="!formEmployee.valid">Update</button>
+    </div>
+</form>

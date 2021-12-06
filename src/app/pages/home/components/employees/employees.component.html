@@ -1,0 +1,73 @@
+<div style="padding: 20px;">
+  <br>
+ <div class="row">
+  <div class="col-md-12">
+    <mat-form-field class="width-full" appearance="outline">
+      <mat-label>Buscar</mat-label>
+      <input matInput [formControl]="valueSearch">
+      <mat-hint>Results: {{ length }}</mat-hint>
+    </mat-form-field>
+  </div>
+  <br>
+  <div class="mat-elevation-z8">
+    <div class="container-table">
+      <table mat-table [dataSource]="dataSource">
+
+        <ng-container matColumnDef="name" sticky>
+          <th mat-header-cell *matHeaderCellDef> Name </th>
+          <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="last_name">
+          <th mat-header-cell *matHeaderCellDef> Last name </th>
+          <td mat-cell *matCellDef="let element"> {{element.last_name}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="email">
+          <th mat-header-cell *matHeaderCellDef> Email </th>
+          <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="nationality">
+          <th mat-header-cell *matHeaderCellDef> Nationality </th>
+          <td mat-cell *matCellDef="let element"> {{element.nationality}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="phone">
+          <th mat-header-cell *matHeaderCellDef> Phone </th>
+          <td mat-cell *matCellDef="let element"> {{element.phone}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="civil_status">
+          <th mat-header-cell *matHeaderCellDef> Civil status </th>
+          <td mat-cell *matCellDef="let element"> {{element.civil_status}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="birthday">
+          <th mat-header-cell *matHeaderCellDef> Birthday </th>
+          <td mat-cell *matCellDef="let element"> {{ element.birthday | date:'mediumDate'  }} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="action" stickyEnd>
+          <th mat-header-cell *matHeaderCellDef> Action </th>
+          <td mat-cell *matCellDef="let element">
+            <button mat-icon-button (click)="updateEmployee(element)">
+              <mat-icon>edit</mat-icon>
+            </button>
+            <button mat-icon-button (click)="detailEmployee(element)">
+              <mat-icon>visibility</mat-icon>
+            </button>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+
+    </div>
+
+    <mat-paginator showFirstLastButtons (page)="changePage($event)" [pageSize]="pageSize" [length]="length " [pageSizeOptions]="pageSizeOptions">
+    </mat-paginator>
+  </div>
+ </div>
+</div>

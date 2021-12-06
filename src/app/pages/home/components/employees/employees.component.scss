@@ -1,0 +1,15 @@
+table {
+    width: 100%;
+    th {
+        text-align: center;
+    }
+    td {
+        white-space: pre;
+    }
+}
+.container-table {
+    overflow: auto;
+}
+.mat-elevation-z8{
+    padding: 0 !important;
+}

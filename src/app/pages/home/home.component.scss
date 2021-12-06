@@ -1,0 +1,14 @@
+.spacer {
+  flex: 1 1 auto;
+}
+.container-home {
+  height: 100%;
+  display: flex;
+  flex-flow: column;
+  #side-menu{    
+    width: 200px;
+  }
+  #menu {
+    height: 100%;
+  }
+}
